@@ -29,9 +29,9 @@ export class LinkedList<T extends IHaveToStringMethod> {
   }
 
   reverse() {
-    let next = null;
+    let next: Node<T> = null;
     let current = this.head;
-    let prev = null;
+    let prev: Node<T> = null;
 
     while (current != null) {
       next = current.next;
@@ -41,5 +41,26 @@ export class LinkedList<T extends IHaveToStringMethod> {
     }
 
     this.head = prev;
+  }
+
+  deleteNode(value: T) {
+    let current = this.head;
+    let prev: Node<T> = null;
+
+    if (current != null && current.data == value) {
+      this.head = current.next;
+      return;
+    }
+
+    while (current != null && current.data != value) {
+      prev = current;
+      current = current.next;
+    }
+
+    if (current == null) {
+      return;
+    }
+
+    prev.next = current.next;
   }
 }

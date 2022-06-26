@@ -14,5 +14,9 @@ const appDiv: HTMLElement = document.getElementById('app');
 appDiv.append(linkedList.toString());
 
 linkedList.reverse();
+appDiv.append(linkedList.toString());
 
+linkedList.deleteNode(50);
+linkedList.deleteNode(10);
+linkedList.deleteNode(20);
 appDiv.append(linkedList.toString());
