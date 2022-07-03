@@ -1,5 +1,7 @@
 // Import stylesheets
+import { LongestCommonString } from './algo/longest-common-string';
 import { shortestString } from './algo/sortest-string';
+import { H1Title } from './h1-title';
 import { LinkedList } from './models/linked-list';
 import './style.css';
 
@@ -24,3 +26,6 @@ const appDiv: HTMLElement = document.getElementById('app');
 // appDiv.append(linkedList.toString());
 
 appDiv.innerHTML = shortestString('My name is xyz 1', 'yxz');
+
+appDiv.appendChild(H1Title.init('Shortest Common String'));
+appDiv.innerHTML += LongestCommonString.Run('ABCD', 'ABCD').toString();
